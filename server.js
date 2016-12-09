@@ -23,12 +23,12 @@ app.set('view engine','hbs');
 //     next();
 // });
 
-app.use((req,res,next)=> {
-    res.render('maintenance.hbs',{
-        beBack: "We'll be back",
-        underMaintenance: "Site Under Maintenance"
-    })
-});
+// app.use((req,res,next)=> {
+//     res.render('maintenance.hbs',{
+//         beBack: "We'll be back",
+//         underMaintenance: "Site Under Maintenance"
+//     })
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -52,6 +52,12 @@ app.get('/about',(request,response)=>{
     response.render('about.hbs',{
         pageTitle: 'About Page',
 
+    });
+});
+
+app.get('/projects',(req,res)=> {
+    res.render('projects.hbs',{
+        pageTitle: 'Projects Page'
     });
 })
 
