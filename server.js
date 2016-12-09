@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -59,6 +61,6 @@ app.get('/bad',(request,response)=>{
     });
 })
 
-app.listen(process.env.PORT,()=>{
-    console.log('Server is up!');
+app.listen(port,()=>{
+    console.log(`Server is up at ${port}`);
 });
